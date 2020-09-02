@@ -20,6 +20,6 @@ Antes de empezar a resolver el problema, debuggeen los tests que funcionan para 
 
 Una vez que se sientan cómodos con el modelo, hagan pasar todos los tests implementando lo necesario utilizando ifs. Una vez que los tests pasen, apliquen el algoritmo que vimos en clase para reemplazar if por polimorfismo.
 
-## Desafío Adicional (opcional, no resta, otorga puntos extra):
+## Desafío Adicional (opcional, no resta, otorga puntos extra)
 
 Aquellos que estén interesados en llevar al extremo el reemplazo de if por polimorfismo (y practicar para el parcial), traten de sacar los ifs que ya venían en el ejercicio inicialmente y que tienen que ver con que no se puede dividir por cero, que el denominador no puede ser uno, casos bases de fibonacci, etc. Las soluciones a este desafío son muy interesantes y distintas en para lenguajes de prototipación (ej. javascript) y clasificación.
