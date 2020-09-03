@@ -6,8 +6,20 @@ Llame al primer número I, al segundo número II, al tercero III, al cuarto IIII
 
 Inicialmente concéntrense en representar el I y el II.
 
-Vaya definiendo los métodos necesarios para que los números de Peano por usted definidos sepan responder los mensajes: previous, next, + unNumeroDePeano, - unNumeroDePeano, * unNumeroDePeano, / unNumeroDePeano. En ese orden, deje la división para el final que es más difícil.
-Cuando al II se le envíe el mensaje next, automáticamente se debe crear el III si aún no existe y así sucesivamente. Cuando se multipliquen números también se deberán crear los números que esa multiplicación abarque automáticamente, entre ellos el resultado (por ejemplo II * II generará el III y el IIII si aún no están representados y retornará el IIII).
+Vaya definiendo los métodos necesarios para que los números de Peano por usted definidos sepan responder los mensajes: 
+
+1. previous
+2. next
+3. \+ unNumeroDePeano
+4. \- unNumeroDePeano, 
+5. \* unNumeroDePeano
+6. / unNumeroDePeano. 
+
+En ese orden, deje la división para el final que es más difícil.
+
+Cuando al II se le envíe el mensaje next, automáticamente se debe crear el III si aún no existe y así sucesivamente. 
+
+Cuando se multipliquen números también se deberán crear los números que esa multiplicación abarque automáticamente, entre ellos el resultado. Por ejemplo II * II generará el III y el IIII si aún no están representados y retornará el IIII.
 
 Para la división, puede definirla de modo que retorne la parte natural (IIII/III retorna I) o bien que solo funcione para divisiones de resultado natural y cuando se pretende dividir números que no se dividen haya un error (ej IIII/III genera un error).
 
