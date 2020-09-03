@@ -10,9 +10,9 @@ Vaya definiendo los métodos necesarios para que los números de Peano por usted
 
 1. previous
 2. next
-3. + unNumeroDePeano
-4. - unNumeroDePeano, 
-5. * unNumeroDePeano
+3. \+ unNumeroDePeano
+4. \- unNumeroDePeano, 
+5. \* unNumeroDePeano
 6. / unNumeroDePeano. 
 
 En ese orden, deje la división para el final que es más difícil.
