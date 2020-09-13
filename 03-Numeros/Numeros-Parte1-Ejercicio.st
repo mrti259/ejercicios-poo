@@ -164,22 +164,6 @@ Object subclass: #Numero
 	self error: 'Tipo de número no soportado'
 	! !
 
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/9/2019 16:21:07'!
-// aDivisor 
-	
-	type = #Entero ifTrue:
-		[ ^self class with: value // aDivisor integerValue ].
-		
-	self error: 'Tipo de número no soportado'! !
-
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/9/2019 16:21:17'!
-greatestCommonDivisorWith: anEntero 
-	
-	type = #Entero ifTrue:
-		[^self class with: (value gcd: anEntero integerValue)].
-		
-	self error: 'Tipo de número no soportado'! !
-
 !Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/8/2019 23:19:57'!
 negated
 	
@@ -187,23 +171,6 @@ negated
 		[ ^self * (self class with: -1) ].
 	type = #Fraccion ifTrue:
 		[ ^self class with: numerator * (self class with: -1) over: denominator ].! !
-
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/8/2019 21:59:58'!
-printOn: aStream
-	
-	type = #Entero ifTrue:
-		[ aStream print: value ].
-	
-	type = #Fraccion ifTrue:
-		[ aStream 
-			print: numerator;
-			nextPut: $/;
-			print: denominator ].! !
-
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/8/2019 21:55:04'!
-type
-	
-	^type! !
 
 
 !Numero methodsFor: 'testing' stamp: 'NR 9/8/2019 22:00:09'!
@@ -266,6 +233,24 @@ numerator
 
 	^numerator! !
 
+!Numero methodsFor: 'accessing' stamp: 'NR 9/8/2019 21:55:04'!
+type
+	
+	^type! !
+
+
+!Numero methodsFor: 'printing' stamp: 'NR 9/8/2019 21:59:58'!
+printOn: aStream
+	
+	type = #Entero ifTrue:
+		[ aStream print: value ].
+	
+	type = #Fraccion ifTrue:
+		[ aStream 
+			print: numerator;
+			nextPut: $/;
+			print: denominator ].! !
+
 
 !Numero methodsFor: 'comparing' stamp: 'NR 9/8/2019 21:50:26'!
 = anObject
@@ -281,6 +266,23 @@ hash
 		[ ^value hash ].
 	type = #Fraccion ifTrue:
 		[ ^(numerator hash / denominator hash) hash ].! !
+
+
+!Numero methodsFor: 'arithmetic operations - private' stamp: 'NR 9/9/2019 16:21:07'!
+// aDivisor 
+	
+	type = #Entero ifTrue:
+		[ ^self class with: value // aDivisor integerValue ].
+		
+	self error: 'Tipo de número no soportado'! !
+
+!Numero methodsFor: 'arithmetic operations - private' stamp: 'NR 9/9/2019 16:21:17'!
+greatestCommonDivisorWith: anEntero 
+	
+	type = #Entero ifTrue:
+		[^self class with: (value gcd: anEntero integerValue)].
+		
+	self error: 'Tipo de número no soportado'! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
