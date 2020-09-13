@@ -1,17 +1,17 @@
-!classDefinition: #NumeroTest category: #'Numero-Exercise'!
+!classDefinition: #NumeroTest category: #'Numeros-Parte1-Ejercicio'!
 TestCase subclass: #NumeroTest
 	instanceVariableNames: 'zero one two four oneFifth oneHalf five twoFifth twoTwentyfifth fiveHalfs three eight negativeOne negativeTwo'
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Numero-Exercise'!
+	category: 'Numeros-Parte1-Ejercicio'!
 
-!NumeroTest methodsFor: 'tests' stamp: 'NR 9/8/2019 21:08:06'!
-test01isCeroReturnsTrueWhenAskToZero
+!NumeroTest methodsFor: 'tests' stamp: 'LL 9/13/2020 15:15:40'!
+test01isZeroReturnsTrueWhenAskToZero
 
 	self assert: zero isZero! !
 
-!NumeroTest methodsFor: 'tests' stamp: 'NR 9/8/2019 21:09:48'!
-test02isCeroReturnsFalseWhenAskToOthersButZero
+!NumeroTest methodsFor: 'tests' stamp: 'LL 9/13/2020 15:15:53'!
+test02isZeroReturnsFalseWhenAskToOthersButZero
 
 	self deny: one isZero! !
 
@@ -128,12 +128,12 @@ setUp
 	! !
 
 
-!classDefinition: #Numero category: #'Numero-Exercise'!
+!classDefinition: #Numero category: #'Numeros-Parte1-Ejercicio'!
 Object subclass: #Numero
 	instanceVariableNames: 'type value numerator denominator'
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Numero-Exercise'!
+	category: 'Numeros-Parte1-Ejercicio'!
 
 !Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/9/2019 15:44:29'!
 * aMultiplier 
@@ -284,7 +284,7 @@ hash
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'Numero class' category: #'Numero-Exercise'!
+!classDefinition: 'Numero class' category: #'Numeros-Parte1-Ejercicio'!
 Numero class
 	instanceVariableNames: ''!
 
