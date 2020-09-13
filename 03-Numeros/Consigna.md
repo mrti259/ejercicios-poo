@@ -29,6 +29,8 @@ Pasos a seguir:
 2. Una vez que se sientan cómodos con el modelo, hagan pasar todos los tests implementando lo necesario utilizando ifs. 
 3. Una vez que los tests pasen, apliquen el algoritmo que vimos en clase para reemplazar if por polimorfismo.
 
+Para la entrega, deben hacer file-out de la solución a esta segunda parte. No es necesario entregar la solución a la primera parte.
+
 Algunas aclaraciones:
 
 - Las fracciones no pueden tener denominador 1. Fracciones con denominador 1 se asumen enteros.
