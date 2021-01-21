@@ -39,7 +39,8 @@ La interfaz Rest que ofrecerá el sistema debe permitir crear un carrito (el cua
 - Recurso: /addToCart 
 	- Parámetros: 
 		- `cartId`: Id del carrito creado con /createCart 
-		- `bookIsbn`: ISBN del libro que se desea agregar. Debe ser un ISBN de la editorial bookQuantity: Cantidad de libros que se desean agregar. Debe ser >= 1. 
+		- `bookIsbn`: ISBN del libro que se desea agregar. Debe ser un ISBN de la editorial 
+		- `bookQuantity`: Cantidad de libros que se desean agregar. Debe ser >= 1.
 	- Output:
 		- En caso de éxito: `0|OK`
 		- En caso de error: `1|DESCRIPCION_DE_ERROR`
