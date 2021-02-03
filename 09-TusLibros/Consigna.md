@@ -67,7 +67,7 @@ La interfaz Rest que ofrecerá el sistema debe permitir crear un carrito (el cua
 		- `clientId`: ID del cliente que quiere ver que compras hizo 
 		- `password`: Password del cliente que valida que puede operar con TusLibros.com 
 	- Output: 
-		- En caso de éxito: `0|ISBN_1|QUANTITY_1|....|ISBN`
+		- En caso de éxito: `0|ISBN_1|QUANTITY_1|....|ISBN_N|QUANTITY_N|TOTAL_AMOUNT`
 		- En caso de error: `1|DESCRIPCION_DE_ERROR`
 
 Si el request realizado no cumple con las reglas sintácticas, se debe devolver como HTTP status el código 400 (Bad request). Si cumple con la sintaxis se debe devolver como HTTP status el código 200 (OK).
