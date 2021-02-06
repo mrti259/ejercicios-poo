@@ -1,6 +1,6 @@
 # Servicios financieros 2
 
-## Tercera parte: Reportes
+## Reportes
 
 Por nuestro gran trabajo, el CEO del banco decidió extender el contrato y seguir agregando funcionalidades. Esta vez, quiere poder agregar la funcionalidad de brindar reportes para las cuentas y portfolios de clientes.
 
