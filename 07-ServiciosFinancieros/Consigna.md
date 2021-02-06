@@ -1,6 +1,6 @@
 # Servicios financieros
 
-## Primera parte: Transferencias
+## Transferencias
 
 Un banco quiere empezar a ofrecer nuevos servicios a sus clientes, por lo que nos contrató para extender su actual sistema.
 
@@ -18,7 +18,7 @@ Antes de comenzar, notar que uno de los tests está fallando.. ¿qué sucede? Co
 
 Una vez corregido el test, implementar el modelo mediante TDD.
 
-## Segunda parte: Portfolios
+## Portfolios
 
 Ahora que el banco posee la funcionalidad de transferencias entre cuentas, quiere empezar a ofrecer más servicios financieros a sus clientes más avanzados. Dentro de los nuevos servicios está la posibilidad de poder administrar agrupaciones de cuentas. Esas agrupaciones de cuentas se denominan portfolios.
 
