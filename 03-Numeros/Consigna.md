@@ -9,7 +9,7 @@ Contamos con una suite de tests que verifica una serie de operaciones básicas q
 
 El objetivo de esta primera parte es quitar los ifs utilizando polimorfismo, aplicando el algoritmo que vimos en clase. 
 
-Los tests deben seguir pasando (sin modificarlos).
+Los tests deben seguir pasando. No deben modificarlos, aunque pueden cambiar el setUp si lo necesitan.
 
 ## Segunda parte
 
