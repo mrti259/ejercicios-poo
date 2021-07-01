@@ -4,11 +4,11 @@
 
 Un banco quiere empezar a ofrecer nuevos servicios a sus clientes, por lo que nos contrató para extender su actual sistema.
 
-Actualmente se cuenta con un modelo bancario simple, formado por transacciones de depósito y retiro, así como cuentas bancarias y una implementación inicial de portfolios. El mismo se puede cargar haciendo file-in de ServiciosFinancieros-Ejercicio.st.
+Actualmente se cuenta con un modelo bancario simple, formado por cuentas bancarias y transacciones de depósito y retiro. El mismo se puede cargar haciendo file-in de ServiciosFinancieros-Ejercicio.st.
 
-Dentro de los nuevos servicios está la posibilidad de realizar transferencias entre los clientes. Para ello decidió agregar un nuevo tipo de transacción: la transferencia entre cuentas.
+El primer servicio a implementar consiste en brindar la posibilidad de realizar transferencias entre los clientes. Para ello decidió agregar un nuevo tipo de transacción: la transferencia entre cuentas.
 
-Una **transferencia** es una transacción entre cuentas, que tiene ”dos patas”. La pata de la extracción, de donde se saca la plata, y la pata del depósito a donde se deposita la plata.
+Una **transferencia** es una transacción entre cuentas, que tiene ”dos patas”. La **pata de la extracción**, de donde se saca la plata, y la **pata del depósito** a donde se deposita la plata.
 
 Una transferencia se realiza entonces entre dos cuentas y por un valor.
 
@@ -20,10 +20,22 @@ Una vez corregido el test, implementar el modelo mediante TDD.
 
 ## Portfolios
 
-Ahora que el banco posee la funcionalidad de transferencias entre cuentas, quiere empezar a ofrecer más servicios financieros a sus clientes más avanzados. Dentro de los nuevos servicios está la posibilidad de poder administrar agrupaciones de cuentas. Esas agrupaciones de cuentas se denominan portfolios.
+El segundo servicio a implementar es tener la posibilidad de poder administrar agrupaciones de cuentas. Las agrupaciones de cuentas se denominan **portfolios**. Se espera poder hacer con ellos lo mismo que con una cuenta convencional, excepto registrar transacciones. Por ejemplo, debemos podemos **obtener el balance** de un portfolio: Si un portfolio es la agrupación de Cuenta 1 (con balance de $100) y Cuenta 2 (con balance de $200), se espera que el balance del mismo sea $300. También se espera **poder preguntarle** a un portfolio por medio de un mensaje **si alguna de sus cuentas registró una transacción**. Por último, también se desea poder conocer todas las transacciones de una cuenta.
 
-Actualmente un portfolio permite únicamente agregarle cuentas y otros portfolios, pero se espera poder hacer con ellos lo mismo que con una cuenta convencional, excepto registrar transacciones. Por ejemplo, debemos podemos obtener el balance de un portfolio: Si un portfolio es la agrupación de Cuenta 1 (con balance de $100) y Cuenta 2 (con balance de $200), se espera que el balance del mismo sea $300. También se espera poder preguntarle a un portfolio si alguna de sus cuentas registró una transacción.
+Notar que un portfolio puede estar conformado no sólo por cuentas convencionales sino por otros portfolios, y se espera que las 3 operaciones mencionadas funcionen correctamente para estos casos también.
 
-Por el momento, no se desea poder quitar cuentas o portfolios de un portfolio.
+Por el momento, no se desea poder quitar cuentas convencionales ni portfolios de un portfolio.
 
-Implementar la solución utilizando TDD, extendiendo PortfolioTest.
+Implementar el modelo mediante TDD.
+
+## Extra: Portfolios válidos
+
+Dado que un portfolio puede estar compuesto por otros portfolios, lo correcto sería que asegurarse que las cuentas no se repitan porque sino habría duplicación de información. Es decir, debemos evitar cualquiera de los siguientes escenarios:
+
+1. Un portfolio no puede agregar dos veces la misma cuenta.
+2. Un portfolio no puede agregar una cuenta ya incluída en un portfolio previamente agregado.
+3. Un portfolio no se puede incluir a sí mismo.
+4. No puedo agregar una cuenta a un portfolio cuando este último ya es hijo de otro portfolio padre que tenía dicha cuenta.
+5. No puedo agregar un portfolio a otro porfolio, si el primero incluye una cuenta que el segundo ya tiene.
+
+Extender el modelo existente para contemplar estas restricciones.

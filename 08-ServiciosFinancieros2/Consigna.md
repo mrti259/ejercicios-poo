@@ -31,7 +31,7 @@ El banco prevé agregar muchos reportes nuevos en un tiempo inmediato, por lo ta
 
 Implementar la solución haciendo TDD. Deben partir del código de la solución del ejercicio anterior, ya sea el realizado por ustedes o a partir de la solución provista por la cátedra.
 
-## Bonus track (solo suma, no resta): Reportes especiales
+## Extra: Reportes especiales
 
 El CEO del banco nos premiará si logramos tener 2 nuevos reportes para portfolios. El primero (PortfolioTreePrinter) deberá mostrar la estructura de árbol completa del portfolio. El segundo, un reporte más detallado (PortfolioDetailedTreePrinter) que muestre las transacciones indentadas de acuerdo a la profundidad de cada cuenta del portfolio.
 
@@ -72,5 +72,5 @@ Portfolio de la familia
    Balance = bbb
 ```
 
-Al igual que los reportes anteriores, la diseño final para resolverlos debe permitir agregar reportes sobre portfolios sin tener que modificar nada.
+Al igual que los reportes anteriores, el diseño final para resolverlos debe permitir agregar reportes sobre portfolios sin tener que modificar nada.
 

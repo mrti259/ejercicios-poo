@@ -9,7 +9,7 @@ Hay que hacer pasar todos los tests del ejercicio y la implementación del Stack
 Ayudas: 
 
 1. Primero hagan pasar todos los tests usando if y después aplique la técnica para sacar if que vimos. 
-2. Si les sirve, utilicen una metáfora. Una muy útil es la de representar el juego de los bebés donde se apilan platos en una especie de torre de Hanoi. 
+2. Si les sirve, utilicen una metáfora. Una muy útil es la de representar el juego de los bebés donde se apilan platos en una especie de torre de Hanoi.
 Importante: Tampoco se puede usar handleo de excepciones para ocultar lo que sería en definitiva un if.
 
 ## Segunda parte
