@@ -20,7 +20,7 @@ Una vez corregido el test, implementar el modelo mediante TDD.
 
 ## Portfolios
 
-El segundo servicio a implementar es tener la posibilidad de poder administrar agrupaciones de cuentas. Las agrupaciones de cuentas se denominan **portfolios**. Se espera poder hacer con ellos lo mismo que con una cuenta convencional, excepto registrar transacciones. Por ejemplo, debemos podemos **obtener el balance** de un portfolio: Si un portfolio es la agrupación de Cuenta 1 (con balance de $100) y Cuenta 2 (con balance de $200), se espera que el balance del mismo sea $300. También se espera **poder preguntarle** a un portfolio por medio de un mensaje **si alguna de sus cuentas registró una transacción**. Por último, también se desea **poder conocer todas las transacciones de una cuenta** mediante otro mensaje.
+El segundo servicio a implementar es tener la posibilidad de poder administrar agrupaciones de cuentas. Las agrupaciones de cuentas se denominan **portfolios**. Se espera poder hacer con ellos lo mismo que con una cuenta convencional, excepto registrar transacciones. Por ejemplo, debemos podemos **obtener el balance** de un portfolio: Si un portfolio es la agrupación de Cuenta 1 (con balance de $100) y Cuenta 2 (con balance de $200), se espera que el balance del mismo sea $300. También se espera **poder preguntarle** a un portfolio por medio de un mensaje **si alguna de sus cuentas registró una transacción**. Por último, también se desea **poder conocer todas las transacciones del portfolio** mediante otro mensaje.
 
 Notar que un portfolio puede estar conformado no sólo por cuentas convencionales sino por otros portfolios, y se espera que las 3 operaciones mencionadas funcionen correctamente para estos casos también.
 
