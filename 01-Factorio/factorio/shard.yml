@@ -1,0 +1,13 @@
+name: factorio
+version: 0.1.0
+
+authors:
+  - Borja Garibotti <mgaribotti@fi.uba.ar>
+
+targets:
+  factorio:
+    main: src/factorio.cr
+
+crystal: 1.8.1
+
+license: MIT
