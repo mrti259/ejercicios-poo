@@ -1,0 +1,13 @@
+name: codigo-repetido
+version: 0.1.0
+
+authors:
+  - Borja Garibotti <mgaribotti@fi.uba.ar>
+
+targets:
+  codigo-repetido:
+    main: src/codigo-repetido.cr
+
+crystal: 1.8.1
+
+license: MIT
