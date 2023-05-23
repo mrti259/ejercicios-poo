@@ -5,11 +5,11 @@ def create_customer_book
   CustomerBook.new
 end
 
-def create_customer_book_with_customer(aName : String)
-  create_customer_book.add_customer_named aName
+def create_customer_book_with_customer(name : String)
+  create_customer_book.add_customer_named name
 end
 
-def assert_takes_less_than(max_time : Time::Span, &actionToMeasure)
+def assert_takes_less_than(max_time : Time::Span, &action_to_measure)
   time_spent = Time.measure do
     yield
   end
@@ -30,7 +30,7 @@ def raises_exception_when_customer_book_has_customer(
   exception : Exception.class,
   customer_book : CustomerBook,
   customer_name : String,
-  &actionToRaiseException
+  &action_to_raise_exception
 )
   expect_raises(exception) do
     yield
@@ -43,7 +43,7 @@ end
 def assert_cant_suspend_when_customer_book_has_customer(
   customer_book : CustomerBook,
   customer_name : String,
-  &actionToRaiseException
+  &action_to_raise_exception
 )
   raises_exception_when_customer_book_has_customer(CantSuspend, customer_book, customer_name) do
     yield
