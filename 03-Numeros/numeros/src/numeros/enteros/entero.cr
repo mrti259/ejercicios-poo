@@ -8,8 +8,8 @@ module Numeros
 
     def self.with(value : Int32)
       return Negativo.new(value) if value.negative?
-      return Cero.new 0 if value.zero?
-      return Uno.new 1 if value == 1
+      return Cero.new(0) if value.zero?
+      return Uno.new(1) if value == 1
       NaturalMayorAUno.new(value)
     end
 
