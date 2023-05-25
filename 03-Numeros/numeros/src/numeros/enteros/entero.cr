@@ -8,15 +8,12 @@ module Numeros
 
     def self.with(value : Int32)
       return Negativo.new(value) if value.negative?
-      return Cero.new(0) if value.zero?
-      return Uno.new(1) if value == 1
+      return Cero.new if value.zero?
+      return Uno.new if value == 1
       NaturalMayorAUno.new(value)
     end
 
-    protected getter value
-
-    protected def initialize(@value : Int32)
-    end
+    protected abstract def value
 
     protected def be_added_to(augend : self) : Numero
       self.class.with(augend.value + value)
