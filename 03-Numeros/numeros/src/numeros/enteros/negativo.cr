@@ -2,6 +2,13 @@ require "./entero"
 
 module Numeros
   struct Negativo < Entero
+    protected def initialize(@value : Int32)
+    end
+
+    protected def value
+      @value
+    end
+
     protected def divide(dividend : Numero) : Numero
       dividend.negated / negated
     end
