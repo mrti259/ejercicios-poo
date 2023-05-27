@@ -27,9 +27,5 @@ module Stack
     def top : T
       @top.value
     end
-
-    protected def signal_empty_error
-      raise Exception.new self.class.stack_empty_error_description
-    end
   end
 end

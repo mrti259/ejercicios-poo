@@ -15,29 +15,34 @@ module Stack
     def self.find_in(stack : OOStack(String), prefix : String) : Array(String)
       invalid_prefix_signal if invalid_prefix? prefix
 
-      new(stack, prefix).find.restore.founded
+      new(stack, prefix).search
     end
 
-    def initialize(@stack : OOStack(String), @prefix : String)
+    private def initialize(@stack : OOStack(String), @prefix : String)
       @founded = Array(String).new
       @auxiliar_stack = OOStack(String).new
     end
 
-    protected def find : self
+    protected def search : Array(String)
+      find
+      restore
+      @founded
+    end
+
+    private def find : Nil
       move(from_stack: @stack, to_stack: @auxiliar_stack) do |sentence|
         add sentence if match? sentence
       end
     end
 
-    private def move(from_stack : OOStack, to_stack : OOStack, &) : self
+    private def move(from_stack : OOStack(String), to_stack : OOStack(String), &) : Nil
       from_stack.size.times do
         to_stack.push from_stack.pop
         yield to_stack.top
       end
-      self
     end
 
-    private def add(sentence : String)
+    private def add(sentence : String) : Nil
       @founded << sentence
     end
 
@@ -45,14 +50,10 @@ module Stack
       sentence.starts_with? @prefix
     end
 
-    protected def restore : self
+    private def restore : Nil
       move(from_stack: @auxiliar_stack, to_stack: @stack) do
         next
       end
-    end
-
-    protected def founded : Array(String)
-      @founded
     end
   end
 end

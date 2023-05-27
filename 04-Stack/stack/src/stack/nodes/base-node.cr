@@ -14,7 +14,7 @@ module Stack
       0
     end
 
-    def signal_empty_error
+    def signal_empty_error : NoReturn
       raise Exception.new OOStack.stack_empty_error_description
     end
   end
