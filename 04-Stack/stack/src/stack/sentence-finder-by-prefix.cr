@@ -4,7 +4,7 @@ module Stack
       "Prefix can't be empty"
     end
 
-    private def self.invalid_prefix_signal
+    private def self.invalid_prefix_signal : NoReturn
       raise Exception.new invalid_prefix_error_description
     end
 
@@ -20,7 +20,7 @@ module Stack
 
     private def initialize(@stack : OOStack(String), @prefix : String)
       @founded = Array(String).new
-      @auxiliar_stack = OOStack(String).new
+      @auxiliar_stack = OOStackUnlimited(String).empty
     end
 
     protected def search : Array(String)

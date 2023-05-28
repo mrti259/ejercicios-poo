@@ -1,7 +1,7 @@
 require "./spec_helper"
 
 describe Stack do
-  describe OOStack do
+  describe OOStackUnlimited do
     stack = create_empty_stack
 
     after_each do
@@ -126,6 +126,41 @@ describe Stack do
         expect_raises(Exception, invalid_prefix_error_description) do
           find_in(stack, spaced_prefix)
         end
+      end
+    end
+  end
+
+  describe OOStackLimited do
+    it "empty limited stack is not full" do
+      stack = create_empty_limited_stack_up_to 1
+      stack.full?.should be_false
+    end
+
+    it "limited stack is full when limit is reached" do
+      stack = create_empty_limited_stack_up_to 1
+      stack.push "something"
+      stack.full?.should be_true
+    end
+
+    it "limited stack is not full until limit is reached" do
+      stack = create_empty_limited_stack_up_to 2
+      stack.push "something"
+      stack.full?.should be_false
+      stack.push "anything"
+      stack.full?.should be_true
+    end
+
+    it "can not push when limit was reached" do
+      stack = create_empty_limited_stack_up_to 1
+      stack.push "something"
+      expect_raises(Exception, limit_reached_error_description) do
+        stack.push "oops"
+      end
+    end
+
+    it "can not create stack with limit under 1" do
+      expect_raises(Exception, invalid_limit_error_description) do
+        create_empty_limited_stack_up_to 0
       end
     end
   end

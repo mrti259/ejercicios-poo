@@ -4,7 +4,7 @@ require "../src/stack"
 include Stack
 
 def create_empty_stack
-  OOStack(String).new
+  OOStackUnlimited(String).empty
 end
 
 def create_stack_with(*sentences : String)
@@ -19,4 +19,16 @@ end
 
 def invalid_prefix_error_description
   SentenceFinderByPrefix.invalid_prefix_error_description
+end
+
+def create_empty_limited_stack_up_to(limit : Int32)
+  OOStackLimited(String).upto limit
+end
+
+def limit_reached_error_description
+  OOStackLimited.limit_reached_error_description
+end
+
+def invalid_limit_error_description
+  OOStackLimited.invalid_limit_error_description
 end

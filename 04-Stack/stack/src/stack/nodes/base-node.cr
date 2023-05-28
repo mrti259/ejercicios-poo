@@ -2,20 +2,19 @@ require "./node"
 
 module Stack
   class Base(T) < Node(T)
+    def initialize(@stack : OOStack(T))
+    end
+
     def value : T
-      signal_empty_error
+      @stack.signal_stack_empty
     end
 
     def previous : Node(T)
-      signal_empty_error
+      @stack.signal_stack_empty
     end
 
     def deep : Int
       0
-    end
-
-    def signal_empty_error : NoReturn
-      raise Exception.new OOStack.stack_empty_error_description
     end
   end
 end
