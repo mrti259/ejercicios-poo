@@ -11,30 +11,23 @@ module Codigo::Repetido
     @active_customers = Array(String).new
     @suspended_customers = Array(String).new
 
-    protected def with_self(&) : self
-      yield
-      self
-    end
-
-    protected def signal(message : String)
+    private def signal(message : String) : NoReturn
       raise Exception.new message
     end
 
-    def add_customer_named(name : String) : self
-      with_self do
-        signal self.class.customer_already_exists_error_message if includes_customer_named? name
+    def add_customer_named(name : String) : Nil
+      signal self.class.customer_already_exists_error_message if includes_customer_named? name
 
-        signal self.class.customer_can_not_be_empty_error_message if name.empty?
+      signal self.class.customer_can_not_be_empty_error_message if name.empty?
 
-        @active_customers << name
-      end
+      @active_customers << name
     end
 
-    protected def remove_from_collection_if_absent(
+    private def remove_from_collection_if_absent(
       colection : Array(String),
       element_to_be_removed : String,
       &do_if_absent
-    )
+    ) : Nil
       if colection.includes? element_to_be_removed
         colection.delete element_to_be_removed
       else
@@ -42,22 +35,18 @@ module Codigo::Repetido
       end
     end
 
-    def suspend_customer_named(name : String) : self
-      with_self do
-        remove_from_collection_if_absent(@active_customers, name) do
-          raise CantSuspend.new unless @active_customers.includes? name
-        end
-
-        @suspended_customers << name
+    def suspend_customer_named(name : String) : Nil
+      remove_from_collection_if_absent(@active_customers, name) do
+        raise CantSuspend.new unless @active_customers.includes? name
       end
+
+      @suspended_customers << name
     end
 
-    def remove_customer_named(name : String) : self
-      with_self do
-        remove_from_collection_if_absent(@active_customers, name) do
-          remove_from_collection_if_absent(@suspended_customers, name) do
-            raise NotFound.new
-          end
+    def remove_customer_named(name : String) : Nil
+      remove_from_collection_if_absent(@active_customers, name) do
+        remove_from_collection_if_absent(@suspended_customers, name) do
+          raise NotFound.new
         end
       end
     end

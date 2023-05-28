@@ -6,7 +6,9 @@ def create_customer_book
 end
 
 def create_customer_book_with_customer(name : String)
-  create_customer_book.add_customer_named name
+  customer_book = create_customer_book
+  customer_book.add_customer_named name
+  customer_book
 end
 
 def assert_takes_less_than(max_time : Time::Span, &action_to_measure)
